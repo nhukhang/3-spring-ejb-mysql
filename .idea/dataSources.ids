@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="MySQL" version="5.6.13" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.29 ( Revision: alexander.soklakov@oracle.com-20140120140810-s44574olh90i6i4l )" uuid="4c5ba433-e033-4a51-b104-ff4527838031">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <synchronize>true</synchronize>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost/learning</jdbc-url>
+    <user-name>root</user-name>
+    <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+    <schema-pattern>learning.*</schema-pattern>
+    <libraries>
+      <library>
+        <url>jar://$PROJECT_DIR$/bin/mysql-connector-java-5.1.29-bin.jar!/</url>
+      </library>
+      <library>
+        <url>file://$PROJECT_DIR$/bin/mysql-connector-license.txt</url>
+      </library>
+    </libraries>
+    <schema name="" catalog="learning"/>
+    <table name="category" schema="" catalog="learning" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" length="145" precision="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="VARCHAR" length="145" precision="0" nullable="false" jdbcType="12"/>
+      <column name="parentId" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <column name="createDate" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="frk_parent_child" columns="parentId" ref-table="category" ref-schema="" ref-catalog="learning" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="frk_parent_child" table="category" schema="" catalog="learning" columns="parentId"/>
+      <index name="frk_parent_child_idx" unique="false" columns="parentId"/>
+    </table>
+    <table name="role" schema="" catalog="learning" type="TABLE">
+      <column name="RoleId" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Code" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="RoleId"/>
+      <exported-key name="users_role_frk" table="users" schema="" catalog="learning" columns="RoleId"/>
+      <index name="Code_UNIQUE" unique="true" columns="Code"/>
+      <index name="RoleId_UNIQUE" unique="true" columns="RoleId"/>
+    </table>
+    <table name="stock" schema="" catalog="learning" type="TABLE">
+      <column name="STOCK_ID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="STOCK_CODE" sqlType="VARCHAR" length="10" precision="0" nullable="false" jdbcType="12"/>
+      <column name="STOCK_NAME" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="STOCK_ID"/>
+      <index name="UNI_STOCK_ID" unique="true" columns="STOCK_CODE"/>
+      <index name="UNI_STOCK_NAME" unique="true" columns="STOCK_NAME"/>
+    </table>
+    <table name="users" schema="" catalog="learning" type="TABLE">
+      <column name="UserId" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="FirstName" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
+      <column name="LastName" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
+      <column name="MiddleName" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Email" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="RoleId" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="UserId"/>
+      <foreign-key name="users_role_frk" columns="RoleId" ref-table="role" ref-schema="" ref-catalog="learning" ref-columns="RoleId" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="UserId"/>
+      <index name="users_role_frk_idx" unique="false" columns="RoleId"/>
+    </table>
+  </data-source>
+</component>
