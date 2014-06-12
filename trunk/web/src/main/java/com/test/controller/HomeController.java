@@ -27,6 +27,7 @@ public class HomeController extends ApplicationObjectSupport{
     public ModelAndView home(){
         ModelAndView mav = new ModelAndView("home");
         List list = roleManagementLocalBean.getAllRoles();
+        mav.addObject("list", list);
         return mav;
     }
 
