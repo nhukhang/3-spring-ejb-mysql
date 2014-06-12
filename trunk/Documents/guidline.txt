@@ -1,0 +1,32 @@
+1. standalone:
+
+    <datasource jndi-name="java:jboss/datasources/MySqlDS" pool-name="MYDS" enabled="true" use-java-context="true">
+        <connection-url>jdbc:mysql://localhost:3306/learning</connection-url>
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <driver>mysql</driver>
+        <security>
+            <user-name>root</user-name>
+            <password>123456</password>
+        </security>
+    </datasource>
+
+    <drivers>
+        <driver name="mysql" module="com.mysql">
+            <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+        </driver>
+    </drivers>
+
+2. tao module com.mysql cho driver "mysql"
+    - tao thu muc com/mysql/main trong modules cua jboss
+    - download driver chep file java vao thu muc main
+    - tao file module.xml voi noi dung:
+        <?xml version="1.0" encoding="UTF-8"?>
+        <module xmlns="urn:jboss:module:1.0" name="com.mysql">
+          <resources>
+            <resource-root path="mysql-connector-java-5.1.31-bin.jar"/>
+          </resources>
+          <dependencies>
+            <module name="javax.api"/>
+            <module name="javax.transaction.api"/>
+          </dependencies>
+        </module>
