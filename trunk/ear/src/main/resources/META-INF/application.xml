@@ -13,7 +13,7 @@
     <module>
         <web>
             <web-uri>web-module.war</web-uri>
-            <context-root>/web-module</context-root>
+            <context-root>/</context-root>
         </web>
     </module>
     <library-directory>lib</library-directory>
