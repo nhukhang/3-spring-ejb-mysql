@@ -56,7 +56,7 @@
                         <webModule>
                             <groupId>com.test</groupId>
                             <artifactId>web-module</artifactId>
-                            <contextRoot>/web</contextRoot>
+                            <contextRoot>/</contextRoot>
                         </webModule>
                     </modules>
                     <applicationXml>

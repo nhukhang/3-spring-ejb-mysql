@@ -30,3 +30,10 @@
             <module name="javax.transaction.api"/>
           </dependencies>
         </module>
+3. de deploy o context root
+    <virtual-server name="default-host" enable-welcome-root="false">
+        <alias name="localhost"/>
+        <alias name="example.com"/>
+    </virtual-server>
+
+    thay enable-welcome-root="true" -> enable-welcome-root="false"
