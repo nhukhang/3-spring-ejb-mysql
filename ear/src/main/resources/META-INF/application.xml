@@ -5,14 +5,14 @@
 <application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
     <display-name>ear-assembly</display-name>
     <module>
-        <ejb>core-module.jar</ejb>
+        <ejb>core-module-1.0.jar</ejb>
     </module>
     <module>
-        <ejb>business-module.jar</ejb>
+        <ejb>business-module-1.0.jar</ejb>
     </module>
     <module>
         <web>
-            <web-uri>web-module.war</web-uri>
+            <web-uri>web-module-1.0.war</web-uri>
             <context-root>/</context-root>
         </web>
     </module>

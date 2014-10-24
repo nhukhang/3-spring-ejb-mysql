@@ -11,6 +11,12 @@
 
   <artifactId>business-module</artifactId>
   <packaging>ejb</packaging>
+  <version>1.0</version>
+
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -44,7 +50,6 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-ejb-plugin</artifactId>
@@ -63,5 +68,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

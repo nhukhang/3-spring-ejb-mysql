@@ -9,8 +9,8 @@
 
     <groupId>com.test</groupId>
     <artifactId>core-module</artifactId>
-    <version>1.0</version>
     <packaging>ejb</packaging>
+    <version>1.0</version>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -39,10 +39,16 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>jboss</groupId>
+            <artifactId>jbossall-client</artifactId>
+            <version>3.2.6</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-ejb-plugin</artifactId>
