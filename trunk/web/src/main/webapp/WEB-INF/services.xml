@@ -10,7 +10,8 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-    <jee:local-slsb jndi-name="java:app/business-module/RoleManagementSessionEJB!com.test.business.RoleManagementLocalBean" business-interface="com.test.business.RoleManagementLocalBean" id="roleManagementLocalBean"/>
+    <jee:local-slsb jndi-name="java:app/business-module-1.0/RoleManagementSessionEJB!com.test.business.RoleManagementLocalBean" business-interface="com.test.business.RoleManagementLocalBean" id="roleManagementLocalBean"/>
+    <jee:local-slsb jndi-name="java:app/business-module-1.0/ShoppingCartSessionEJB!com.test.business.ShoppingCartLocalBean" business-interface="com.test.business.ShoppingCartLocalBean" id="shoppingCartLocalBean"/>
 
 </beans>
 
